@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
 import { Search, ShoppingBag, Heart, User, Menu, X, ChevronRight } from "lucide-react";
@@ -17,6 +17,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -24,6 +25,14 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Sheets don't unmount on navigation (Header lives in the root layout), so
+  // browser back/forward (popstate) bypasses the Link onClick handlers that
+  // normally close them — leaving the overlay covering the destination page.
+  useEffect(() => {
+    setCartOpen(false);
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
     <>
