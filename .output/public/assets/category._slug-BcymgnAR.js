@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DGeXAQPT.js";import{c as t}from"./ProductCard-D7tEdc64.js";import{_ as n,i as r,t as i}from"./index-t-mygVFq.js";var a=e();function o(){let{slug:e}=i.useParams(),{data:o=[]}=n(t()),s=o.find(t=>t.slug===e);return(0,a.jsx)(r,{title:s.name,subtitle:s.tagline??void 0,filter:{categorySlug:e,limit:60},lockedCategoryId:s.id})}export{o as component};

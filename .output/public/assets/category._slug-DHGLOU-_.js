@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DGeXAQPT.js";var t=e(),n=()=>(0,t.jsxs)(`div`,{className:`mx-auto max-w-xl px-4 py-24 text-center`,children:[(0,t.jsx)(`h1`,{className:`font-display text-4xl`,children:`Category not found`}),(0,t.jsx)(`p`,{className:`mt-3 text-muted-foreground`,children:`We couldn't find that category.`})]});export{n as notFoundComponent};
