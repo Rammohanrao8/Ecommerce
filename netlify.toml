@@ -4,3 +4,9 @@
 
 [functions]
   directory = ".netlify/functions-internal"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/nitro"
+  status = 200
+  force = false
